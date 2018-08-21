@@ -1,0 +1,238 @@
+* {
+    margin:0px;
+    padding:0px;
+    border:0px;
+}
+body {
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    font-family: cairo , sans-serif ; 
+    font-size:12px;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;  
+  opacity: .8; 
+  z-index: -1;
+  background-image: url("http://cpers.qc.ca/wp-content/uploads/2017/04/Black-paper-floral-seamless-pattern-vector.jpg");
+}
+
+
+.textarea-div { 
+    position:relative;
+    
+}
+
+.delete-div {
+    position:absolute;
+    width:100%;
+    bottom:13px;
+}
+
+
+
+p {
+    margin:0px;
+    max-width:100% ; 
+
+}
+
+
+
+legend {
+    font-size:15px;
+}
+
+fieldset { 
+    border:1px solid white;
+}
+
+#encrypted {
+    line-height: 12px ;  
+}
+
+#decrypted {
+    background-color: rgb(119, 22, 124) ;
+    border-radius:10px;
+    padding:0px;
+    max-width: 600px;
+    margin-bottom: 8px
+}
+
+.main-container-enc , .main-container-dec {
+    width:50% ; 
+    min-width:300px;
+    top:110px;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-bottom: 40px ;*/
+    background-color:rgba(196, 81, 39 , 0.9);
+    max-width:800px;
+}
+
+.main-container-enc {
+    margin-top:10px;
+    border-top:4px solid rgb(201, 97, 62) ;
+    border-right:4px solid rgb(201, 97, 62) ;
+    border-left:4px solid rgb(201, 97, 62) ;
+    border-radius:18px 18px 0px 0px ;
+    padding:5px 30px 0px 30px;
+
+}
+
+.main-container-dec {
+    margin-bottom:10px;
+    border-bottom:4px solid rgb(201, 97, 62) ;
+    border-right:4px solid rgb(201, 97, 62) ;
+    border-left:4px solid rgb(201, 97, 62) ;
+    border-radius:0px 0px 18px 18px ;
+    padding:9px 30px 2px 30px;
+}
+
+
+
+#logo {
+    display: block;
+    margin:-10px auto 0px auto;
+    width: 100px;
+}
+
+.subjects-table {
+    padding:0px 10px 10px 10px;
+    background-color:rgb(78, 108, 160);
+    border-radius:10px;
+    margin:20px auto 10px auto;
+}
+
+table {
+    margin:auto;
+    width:90%;
+}
+th {
+    padding:12px;
+}
+
+td {
+    padding:0px 4px;
+}
+
+h2 {
+    margin:0px;
+}
+
+input {
+    border-radius:7px;
+    padding:0px 4px;
+    border:1px solid gray;
+}
+
+select {
+    /*border-radius:7px;*/
+    height:19px;
+}
+
+
+.radio-button {
+    position:relative;
+    top:3px;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+    font-size:80%;
+    font-family: "Courier New", Courier, monospace ; 
+    font-weight: 100; 
+}
+
+.checkbox{
+    position:relative;
+    top:2px;
+}
+
+textarea {
+    /*max-width:80%;*/
+    /*min-width:80%;*/
+    max-width:100%;
+    width:100%;
+    height:100px;
+    resize: none;
+    border-radius:5px;
+    /*padding:0px 4px;*/
+    border:1px solid gray;
+
+}
+
+input[type="number"] {
+   width:120px;
+}
+
+fieldset {
+    width:90%;
+    text-align:center;
+    border-radius:7px;
+    border-color:white;
+
+}
+
+#error-dec , #error-enc {
+    background-color: rgb(165, 13, 13) ; 
+    border-radius: 20px ; 
+    padding:10px;
+    display:none;
+}
+
+@media only screen and (max-device-width: 480px) {
+    body {
+    /*-moz-transform: scale(2); */
+    zoom:240%; /* For Chrome, IE, default 100%*/
+    }
+    
+.main-container-enc , .main-container-dec {
+    width:60% ; 
+    min-width:300px;
+    top:110px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgba(196, 81, 39 , 0.9);
+    max-height: 800px;
+}
+
+.main-container-enc {
+    margin-top:10px;
+    border-top:4px solid rgb(201, 97, 62) ;
+    border-right:4px solid rgb(201, 97, 62) ;
+    border-left:4px solid rgb(201, 97, 62) ;
+    border-radius:18px 18px 0px 0px ;
+    padding:5px 30px 10px 30px;
+
+}
+
+.main-container-dec {
+    margin-bottom:10px;
+    border-bottom:4px solid rgb(201, 97, 62) ;
+    border-right:4px solid rgb(201, 97, 62) ;
+    border-left:4px solid rgb(201, 97, 62) ;
+    border-radius:0px 0px 18px 18px ;
+    padding:10px 30px 2px 30px;
+}
+
+textarea {
+    font-size:200%;
+}
+
+
+#decrypted {
+    background-color: rgb(119, 22, 124) ;
+    border-radius:10px;
+    padding:0px;
+    max-width: 250px;
+}
+
+}

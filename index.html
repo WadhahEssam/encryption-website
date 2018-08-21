@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>تشفير النصوص</title>
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" >
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+        <script src="script.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">       
+    </head>
+    
+    <body>
+
+        <div class="main-container-enc" >
+            
+            <fieldset style="display:inline" class="student-info" dir="rtl">
+                <legend><h2>تشفير</h2></legend>
+                <table>
+                    
+                    <tr>
+                        <!--<td><h2>النص</h2></td>-->
+                        <td colspan=2>
+                            <div class="textarea-div">
+                                <textarea id="text-enc" onkeyup="process()"  onpaste="process()" onchange="process()"></textarea>
+                                    <div class="delete-div">
+                                         <a onclick="deleteTextEnc()" href="javascript:void(0);"><img align="left" id="delete" width=25 src="img/delete.png"> </a>
+                                    </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><h2 style="position:relative;right:15px">المفتاح</h2></td>
+                        <td> <input type=number id="key-enc" value=1 onkeyup="process()" onpaste="process()" onchange="process()"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan=2><div id="error-enc"><img width=40 src="img/error.png"> <p>يسمح فقط للاعداد ما بين 1 - 999999999</p></div></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan=2 > <p id="encrypted" style="word-wrap: break-word;max-width:100%" > هنا سيكون النص بعد التشفير</p>  </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan=2> <a onclick="copyToClipboard()" href="javascript:void(0);"><img  style="margin-top:10px" width=40 src="img/copy.png"> </a> </td>
+                    </tr>
+                    
+                </table>
+            </fieldset>
+            
+            
+            
+            <br>
+            
+            <br>
+            
+            
+            
+        </div>
+        
+        <div class="main-container-dec" >
+            
+            <fieldset style="display:inline" class="student-info" dir="rtl">
+                <legend><h2>فك التشفير</h2></legend>
+                <table>
+                    
+                    <tr>
+                        <!--<td><h2>الشفرة</h2></td>-->
+                        <td colspan=2>
+                            <div class="textarea-div">
+                                <textarea id="text-dec" onkeyup="process()" onpaste="process()" onchange="process()"></textarea>
+                                <div class="delete-div">
+                                     <a onclick="deleteTextDec()" href="javascript:void(0);"><img align="left" id="delete" width=25 src="img/delete.png"> </a>
+                                   
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><h2 style="position:relative;right:15px">المفتاح</h2></td>
+                        <td> <input width=3 size="number" max=4 value=1 type=number id="key-dec" onpaste="process()" onkeyup="process()" onchange="process()"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan=2><div id="error-dec"><img width=40 src="img/error.png"> <p>يسمح فقط للاعداد ما بين 1 - 999999999</p></div></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan=2 > <p class="text" id="decrypted" style="font-size:130%;padding:0px 10px;" >   هنا سيكون النص</p>  </td>
+                    </tr>
+                    
+                </table>
+            </fieldset>
+            
+            <br>
+            
+            
+            
+            <!--<fieldset style="display:inline" dir="rtl">-->
+            <!--    <legend>التراكمي</legend>-->
+
+                
+            <!--</fieldset>-->
+            <br>
+            
+            <p style="position:relative;bottom:10px">وضاح عصام @</p>
+            
+        </div>
+
+    </body>
+    
+</html>

@@ -1,0 +1,85 @@
+http://closure-compiler.appspot.com/home
+
+function process () {
+    // element.style.display = 'none';           // Hide
+    // element.style.display = 'block';
+    var errorEnc = document.getElementById("error-enc") ; 
+    var errorDec = document.getElementById("error-dec") ; 
+    
+ 
+    
+    
+    var textEnc = document.getElementById("text-enc").value ;
+    
+    
+    var keyEnc = parseInt(document.getElementById("key-enc").value) ;
+    
+    var sumOfDigEnc = 0 ; 
+    for ( var i = 0 ; i < keyEnc.length ; i++ ) {
+        sumOfDigEnc += parseInt(keyEnc.charAt(i)) ;
+    }
+    
+    if (document.getElementById("key-enc").value == "") {
+        keyEnc = 1 ; 
+    }
+    
+    
+    if ( !isNaN(keyEnc) && keyEnc > 0 && keyEnc <1000000000 ) { 
+        errorEnc.style.display = 'none' ; 
+        
+        var string = "35" ; 
+        for ( var i = 0 ; i < textEnc.length ; i++ ) { 
+            string += ( keyEnc + parseInt(textEnc.charCodeAt(i)) + sumOfDigEnc + sumOfDigEnc  ) + "42 35";
+        }
+        
+        
+        var encrypted = document.getElementById("encrypted") ; 
+        encrypted.innerHTML = string.substring(0, string.length - 2) ;  
+    } else {
+        errorEnc.style.display = 'block' ; 
+        var encrypted = document.getElementById("encrypted") ; 
+        encrypted.innerHTML = "" ; 
+    }
+
+    var textDec = document.getElementById("text-dec").value.substring(2) ; 
+    
+    if (textDec != "" && textDec.charAt(textDec.length-1) != " " )
+        textDec = textDec + " " ; 
+        
+    if ( textDec == "" ) 
+        textDec = "" ; 
+    else 
+        textDec += "35" ;
+        
+
+    
+
+    
+    var keyDec = parseInt(document.getElementById("key-dec").value) ; 
+    
+    var sumOfDigDec = 0 ; 
+    for ( var i = 0 ; i < keyDec.length ; i++ ) {
+        sumOfDigDec += parseInt(keyDec.charAt(i)) ;
+    }
+    
+    if (document.getElementById("key-dec").value == "") {
+        keyDec = 1 ; 
+    }
+    if ( !isNaN(keyDec) && keyDec > 0 && keyDec <1000000000 ) { 
+        errorDec.style.display = 'none' ; 
+        
+        var strings = textDec.split("42 35") ; 
+        var string = "" ; 
+        for ( var i = 0 ; i < strings.length ; i++ ) {
+            string += String.fromCharCode( parseInt(strings[i]) - keyDec - sumOfDigDec - sumOfDigDec  ) ; 
+        }
+        
+        var decrypted = document.getElementById("decrypted") ; 
+        decrypted.innerHTML = string ; 
+    } else {
+        errorDec.style.display = 'block';
+        var decrypted = document.getElementById("decrypted") ; 
+        decrypted.innerHTML = " " ; 
+        
+    }
+}
